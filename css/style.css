@@ -243,7 +243,6 @@ span {
   position: relative;
   max-width: 750px;
   height: 25px;
-  border: 1px solid rgba(0,0,0,0.8);
   -webkit-border-radius: 16px;
   border-radius: 20px;
 }
@@ -304,7 +303,6 @@ span {
   }
 
   .skill-bar {
-    border: 1px solid rgba(0,0,0,0.8);
     width: 100%;
     display: flex;
   }
