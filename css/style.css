@@ -1,3 +1,4 @@
+
 body,
 div,
 ul,
@@ -9,16 +10,14 @@ h3,
 h4,
 h5,
 h6 {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
 .clear-fix {
   overflow: auto;
 }
-
-
 
 #workExperience,
 #projects,
@@ -134,14 +133,13 @@ a {
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;
-  clear:both;
+  clear: both;
 }
 
 .dark-gray {
   background-color: #fef6d5;
 }
 
-/* TODO: Replace with image later */
 #header {
   background-color: #fef6d5;
 }
@@ -189,12 +187,13 @@ span {
 /* ========================================================
    Animated Skill Bars
    ===================================================== */
-
 /*
  In order to align the skills with the others sections I'm just copy the css attributes of the
  work,project and education id
 */
+
 #skills {
+
   font-family: "Roboto", sans-serif;
   color: #999;
   margin: 0 auto;
@@ -213,11 +212,14 @@ span {
   flex: auto;
   flex-direction: column;
   flex-wrap: wrap;
+
 }
+
 .skill-bar {
+
   font-size: 14px;
   color: #111;
-  width:33%;
+  width: 33%;
   text-align: left;
   text-indent: 6px;
   position: relative;
@@ -237,17 +239,21 @@ span {
 }
 
 .bar {
-  position:relative;
+
+  position: relative;
   max-width: 750px;
-  height:25px;
-  border:1px solid rgba(0,0,0,0.8);
-  -webkit-border-radius:16px;
-  border-radius:20px;
+  height: 25px;
+  border: 1px solid rgba(0,0,0,0.8);
+  -webkit-border-radius: 16px;
+  border-radius: 20px;
 }
-.perc{
+
+.labelpos,
+.percent {
   font-weight: bold;
   color: rgba(8, 0, 7, 0.69);
 }
+
 /* ========================================================
    Individule Skill Colors
    ===================================================== */
@@ -255,6 +261,9 @@ span {
   background: #cfcfcf;
 }
 
+/* ========================================================
+   Style for the gooogle Map
+   ===================================================== */
 #map {
   display: block;
   height: 100%;
@@ -267,8 +276,10 @@ span {
   padding-bottom: 5%;
 }
 
-/* Media queries to handle various device widths */
 
+/* ========================================================
+   Media queries to handle various device widths
+   ===================================================== */
 @media only screen and (max-width: 1024px) {
   #lets-connect {
     margin-top: 5%;
@@ -298,19 +309,19 @@ span {
     display: flex;
   }
 
-  .bar{
+  .bar {
     display: none;
   }
 }
 
-/* Media queries to handle the map height in order to no overlap the footer */
 @media only screen and (max-width: 320px) {
   #map {
     display: block;
-    height: 90%;
+    height: 75%;
     margin: 0 5%;
   }
 }
+
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {

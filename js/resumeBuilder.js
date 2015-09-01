@@ -17,28 +17,30 @@ var bio = {
         "location": "Buenos Aires"
     },
     "summaryMessage": "I am a passionate hands-on professional, " +
-        "I have more or less 5 years experience in Java development covering multiple technologies and frameworks." +
-        " I keep a top of new developments within the industry and can adapt quickly to new coding conventions working" +
-        " environments and new technologies",
+    "I have more or less 5 years experience in Java development covering multiple technologies and frameworks." +
+    " I keep a top of new developments within the industry and can adapt quickly to new coding conventions working" +
+    " environments and new technologies",
 
     "age": 28,
     "skills": [{
-        'id':'HTML',
-        'headline':'HTML & CSS',
-        'percent' :40,
-        'description':'Significant experience and knowledge of HTML(5) and CSS functionality and use.'
+        'id': 'HTML',
+        'headline': 'HTML & CSS',
+        'percent': 40,
+        'description': 'Significant experience and knowledge of HTML(5) and CSS functionality and use.'
 
-        },{
-        'id':'JS',
-        'headline':'JavaScript & jQuery',
-        'percent' :60,
-        'description':'Experience with object-oriented JavaScript. </br> Extended knowledge of DOM manipulation in aiding and extending the UI.'
+    }, {
+        'id': 'JS',
+        'headline': 'JavaScript & jQuery',
+        'percent': 60,
+        'description': 'Experience with object-oriented JavaScript. </br> ' +
+        'Extended knowledge of DOM manipulation in aiding and extending the UI.'
 
-    },{
-        'id':'Java',
-        'headline':'Java',
-        'percent' :80,
-        'description':'Experience with object-oriented Java. </br> Extended knowledge of Java API for RESTful Web Services.'
+    }, {
+        'id': 'Java',
+        'headline': 'Java',
+        'percent': 80,
+        'description': 'Experience with object-oriented Java. </br> ' +
+        'Extended knowledge of Java API for RESTful Web Services.'
 
     }],
 
@@ -64,63 +66,44 @@ var bio = {
     //this function serves to display the skills information
     displaySkills: function() {
         {
-            if(bio.skills.length > 0) {
+            if (bio.skills.length > 0) {
 
 
 
                 for (var i = 0; i < bio.skills.length; i++) {
                     var id = bio.skills[i].id;
-                    var head =  bio.skills[i].headline;
-                    var percent =  bio.skills[i].percent;
+                    var head = bio.skills[i].headline;
+                    var percent = bio.skills[i].percent;
                     var formattedSkills = HTMLskills.replace("%heading%", head)
                         .replace("%percent%", percent)
-                        .replace("%id%",id).replace("%title%",head);
+                        .replace("%id%", id).replace("%title%", head);
 
                     $("#skills").append(formattedSkills);
-                    var formattedBar = HTMLskillBar.replace("%percent%",percent);
-                    $("#"+id).append(formattedBar);
+                    var formattedBar = HTMLskillBar.replace("%percent%", percent);
+                    $("#" + id).append(formattedBar);
                 }
 
             }
             $(function() {
 
                 //Skills Bar Animation
-                $('.skill-bar').each(function(){
+                $('.skill-bar').each(function() {
                     var t = $(this),
                         dataperc = t.attr('data-perc'),
-                        barperc = Math.round(dataperc*4.0);
-                    console.log(dataperc);
-                    t.find('.bar').animate({width:barperc}, dataperc*25);
+                        barperc = Math.round(dataperc * 4.0);
+                    t.find('.bar').animate({
+                        width: barperc
+                    }, dataperc * 25);
 
                     function perc() {
                         var length = t.find('.bar').css('width'),
-                            perc = Math.round(parseInt(length)/4.0),
-                            labelpos = (parseInt(length)-2);
-                        t.find('.perc').text(perc+'%');
+                            perc = Math.round(parseInt(length) / 4.0);
+                        t.find('.percent').text(perc + '%');
                     }
                     perc();
                     setInterval(perc, 0);
                 });
 
-                // Tooltip only Text
-                $('.tool-tip').hover(function(){
-                    // on Hover
-                    var title = $(this).attr('title');
-                    $(this).data('tipText', title).removeAttr('title');
-                    $('<p class="tooltip"></p>')
-                        .text(title)
-                        .appendTo('body')
-                        .fadeIn('slow');
-                }, function() {
-                    // Hover out
-                    $(this).attr('title', $(this).data('tipText'));
-                    $('.tooltip').remove();
-                }).mousemove(function(e) {
-                    var mousex = e.pageX + 20;
-                    var mousey = e.pageY + 10;
-                    $('.tooltip')
-                        .css({ top: mousey, left: mousex })
-                });
             });
         }
     },
